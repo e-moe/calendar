@@ -22,7 +22,7 @@
             <tr class="wrapper">
                 <td class="2week">
                     <table>
-                        {% for exercise in data['2_week'] %}
+                        {% for exercise in calendarResults.twoWeeksAgo %}
                             <tr>
                                 <td>{{ exercise.description }}</td>
                                 <td>{{ exercise.weight }} x {{ exercise.count }}</td>
@@ -32,7 +32,7 @@
                 </td>
                 <td class="1week">
                     <table>
-                        {% for exercise in data['1_week'] %}
+                        {% for exercise in calendarResults.oneWeekAgo %}
                             <tr>
                                 <td>{{ exercise.description }}</td>
                                 <td>{{ exercise.weight }} x {{ exercise.count }}</td>
@@ -42,7 +42,7 @@
                 </td>
                 <td class="today">
                     <table>
-                        {% for exercise in data['today'] %}
+                        {% for exercise in calendarResults.today %}
                             <tr>
                                 <td>{{ exercise.description }}</td>
                                 <td>{{ exercise.weight }} x {{ exercise.count }}</td>
