@@ -6,8 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
+    public function indexAction()
     {
-        return $this->render('Levi9CalendarBundle:Default:index.html.twig', array('name' => $name));
+        $data = $this->get('levi9_calendar.calendar')->getListData();
+        return $this->render('Levi9CalendarBundle:Default:index.html.twig', array('data' => $data));
     }
 }

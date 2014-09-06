@@ -1,7 +1,7 @@
 parameters:
-#    levi9_calendar.example.class: Levi9\CalendarBundle\Example
+    levi9_calendar.calendar.class: Levi9\CalendarBundle\Service\Calendar
 
 services:
-#    levi9_calendar.example:
-#        class: %levi9_calendar.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    levi9_calendar.calendar:
+        class: %levi9_calendar.calendar.class%
+        arguments: [@doctrine]

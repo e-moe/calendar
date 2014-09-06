@@ -1,1 +1,58 @@
-Hello {{ name }}!
+{% extends '::base.html.twig' %}
+
+{% block title %}Calendar{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/levi9calendar/css/main.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+    <h1>Hi man</h1>
+    <p>Check what you did last 3 trainings</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>2 weeks ago</th>
+                <th>1 week ago</th>
+                <th>today</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="wrapper">
+                <td class="2week">
+                    <table>
+                        {% for exercise in data['2_week'] %}
+                            <tr>
+                                <td>{{ exercise.description }}</td>
+                                <td>{{ exercise.weight }} x {{ exercise.count }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </td>
+                <td class="1week">
+                    <table>
+                        {% for exercise in data['1_week'] %}
+                            <tr>
+                                <td>{{ exercise.description }}</td>
+                                <td>{{ exercise.weight }} x {{ exercise.count }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </td>
+                <td class="today">
+                    <table>
+                        {% for exercise in data['today'] %}
+                            <tr>
+                                <td>{{ exercise.description }}</td>
+                                <td>{{ exercise.weight }} x {{ exercise.count }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}
+
