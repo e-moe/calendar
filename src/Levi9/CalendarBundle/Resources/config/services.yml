@@ -1,7 +1,14 @@
 parameters:
     levi9_calendar.calendar.class: Levi9\CalendarBundle\Service\Calendar
+    levi9_calendar.calendar.entity: Levi9\CalendarBundle\Entity\Exercise
 
 services:
+    levi9_calendar.repository:
+        class: Doctrine\ORM\EntityRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments: [%levi9_calendar.calendar.entity%]
+
     levi9_calendar.calendar:
         class: %levi9_calendar.calendar.class%
-        arguments: [@doctrine]
+        arguments: [@levi9_calendar.repository]

@@ -2,28 +2,29 @@
 
 namespace Levi9\CalendarBundle\Service;
 
-use Doctrine\Bundle\DoctrineBundle\Registry;
+use Doctrine\ORM\EntityRepository;
 
 class Calendar
 {
-    /** @var \Doctrine\Bundle\DoctrineBundle\Registry */
-    protected $doctrine;
+    /** @var EntityRepository */
+    protected $repository;
 
-    public function __construct(Registry $doctrine)
+    public function __construct(EntityRepository $entityRepository)
     {
-        $this->doctrine = $doctrine;
+        $this->repository = $entityRepository;
     }
 
     public function getListData()
     {
+
         $data = array(
-            'today' => $this->doctrine->getRepository('Levi9CalendarBundle:Exercise')->findBy(array(
+            'today' => $this->repository->findBy(array(
                 'date' => new \DateTime('today')
             )),
-            '1_week' => $this->doctrine->getRepository('Levi9CalendarBundle:Exercise')->findBy(array(
+            '1_week' => $this->repository->findBy(array(
                 'date' => new \DateTime('1 week ago')
             )),
-            '2_week' => $this->doctrine->getRepository('Levi9CalendarBundle:Exercise')->findBy(array(
+            '2_week' => $this->repository->findBy(array(
                 'date' => new \DateTime('2 weeks ago')
             ))
         );
