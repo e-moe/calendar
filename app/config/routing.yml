@@ -1,0 +1,4 @@
+levi9_calendar:
+    resource: "@Levi9CalendarBundle/Resources/config/routing.yml"
+    prefix:   /
+
