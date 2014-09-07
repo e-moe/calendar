@@ -1,6 +1,7 @@
-levi9_calendar:
+levi9_calendar_homepage:
     resource: "@Levi9CalendarBundle"
     type:     annotation
+    # todo: define _locale in "prefix" here or in main routing file. Then you would not need to write _locale stuff in each action
 
 login:
     path: /{_locale}/login

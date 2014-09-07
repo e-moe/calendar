@@ -6,6 +6,8 @@ security:
                 property: username
 
     firewalls:
+    # todo: Firewall is something that represents secured area. There is only one secured area in this project.
+    # todo: So, remove other. If you need unauthorised access to some files - define this rules in access_control section
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false

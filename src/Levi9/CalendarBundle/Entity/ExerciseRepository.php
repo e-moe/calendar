@@ -12,5 +12,5 @@ use Doctrine\ORM\EntityRepository;
  */
 class ExerciseRepository extends EntityRepository
 {
-    // may be filled later with complicated logic/queries
+    //todo: this class is not used. Remove it.
 }
