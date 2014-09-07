@@ -16,6 +16,12 @@ class Calendar
         $this->repository = $entityRepository;
     }
 
+    /**
+     * Get exercises results
+     *
+     * @param User $user
+     * @return CalendarResults
+     */
     public function getListData(User $user)
     {
 

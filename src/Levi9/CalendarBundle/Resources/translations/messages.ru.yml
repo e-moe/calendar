@@ -1,10 +1,10 @@
-index.title: Календарь
-index.greetings: Привет %user%!
-index.intro: Результаты 3 последних тренировок
-index.table.two_week: 2 недели назад
-index.table.one_week: неделю назад
-index.table.today: сегодня
-index.logout: Выход
+calendar.index.title: Календарь
+calendar.index.greetings: Привет %user%!
+calendar.index.intro: Результаты 3 последних тренировок
+calendar.index.table.two_week: 2 недели назад
+calendar.index.table.one_week: неделю назад
+calendar.index.table.today: сегодня
+calendar.index.logout: Выход
 login.login: Войти
 login.username: Пользователь
 login.password: Пароль

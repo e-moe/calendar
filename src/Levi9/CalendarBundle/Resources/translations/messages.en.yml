@@ -1,10 +1,10 @@
-index.title: Calendar
-index.greetings: Hi %user%!
-index.intro: Check what you did in last 3 trainings
-index.table.two_week: 2 weeks ago
-index.table.one_week: week ago
-index.table.today: today
-index.logout: Logout
+calendar.index.title: Calendar
+calendar.index.greetings: Hi %user%!
+calendar.index.intro: Check what you did in last 3 trainings
+calendar.index.table.two_week: 2 weeks ago
+calendar.index.table.one_week: week ago
+calendar.index.table.today: today
+calendar.index.logout: Logout
 login.login: Login
 login.username: Username
 login.password: Password
