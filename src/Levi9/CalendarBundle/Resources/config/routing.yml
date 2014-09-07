@@ -1,4 +1,4 @@
-levi9_calendar_homepage:
+levi9_calendar:
     resource: "@Levi9CalendarBundle"
     type:     annotation
 

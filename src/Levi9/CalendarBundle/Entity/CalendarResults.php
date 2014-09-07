@@ -4,6 +4,13 @@ namespace Levi9\CalendarBundle\Entity;
 
 use Levi9\CalendarBundle\Entity\Exercise;
 
+/**
+ * Class CalendarResults
+ *
+ * Used just for data interchange, not for Doctrine
+ *
+ * @package Levi9\CalendarBundle\Entity
+ */
 class CalendarResults
 {
     /** @var Exercise[] */
