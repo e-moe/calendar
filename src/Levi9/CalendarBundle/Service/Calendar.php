@@ -4,6 +4,7 @@ namespace Levi9\CalendarBundle\Service;
 
 use Doctrine\ORM\EntityRepository;
 use Levi9\CalendarBundle\Entity\CalendarResults;
+use Levi9\CalendarBundle\Entity\User;
 
 class Calendar
 {
@@ -15,7 +16,7 @@ class Calendar
         $this->repository = $entityRepository;
     }
 
-    public function getListData()
+    public function getListData(User $user)
     {
 
         $calendarResults = new CalendarResults();
@@ -23,17 +24,20 @@ class Calendar
         $calendarResults
             ->setToday(
                 $this->repository->findBy(array(
-                    'date' => new \DateTime('today')
+                    'user' => $user,
+                    'date' => new \DateTime('today'),
                 ))
             )
             ->setOneWeekAgo(
                 $this->repository->findBy(array(
-                    'date' => new \DateTime('1 week ago')
+                    'user' => $user,
+                    'date' => new \DateTime('1 week ago'),
                 ))
             )
             ->setTwoWeeksAgo(
                 $this->repository->findBy(array(
-                    'date' => new \DateTime('2 weeks ago')
+                    'user' => $user,
+                    'date' => new \DateTime('2 weeks ago'),
                 ))
             );
 

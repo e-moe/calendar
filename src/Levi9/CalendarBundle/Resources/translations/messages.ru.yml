@@ -1,5 +1,5 @@
 index.title: Календарь
-index.greetings: Привет
+index.greetings: Привет %user%!
 index.intro: Результаты 3 последних тренировок
 index.table.two_week: 2 недели назад
 index.table.one_week: неделю назад

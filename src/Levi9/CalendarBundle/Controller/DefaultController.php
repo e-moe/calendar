@@ -12,7 +12,8 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $calendarResults = $this->get('levi9_calendar.calendar')->getListData();
+        $user = $this->getUser();
+        $calendarResults = $this->get('levi9_calendar.calendar')->getListData($user);
         return $this->render(
             'Levi9CalendarBundle:Default:index.html.twig',
             array('calendarResults' => $calendarResults)

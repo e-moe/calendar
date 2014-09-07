@@ -2,6 +2,7 @@
 
 namespace Levi9\CalendarBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Levi9\CalendarBundle\Entity\Exercise;

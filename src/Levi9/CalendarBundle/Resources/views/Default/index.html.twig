@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-    <h1>{{ 'index.greetings'|trans }}</h1>
+    <h1>{{ 'index.greetings'|trans({'%user%': app.user.username}) }}</h1>
     <p>{{ 'index.intro'|trans }}</p>
 
     <table>

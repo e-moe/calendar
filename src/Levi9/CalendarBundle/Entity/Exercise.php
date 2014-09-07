@@ -204,6 +204,4 @@ class Exercise
     {
         return $this->user;
     }
-
-
 }

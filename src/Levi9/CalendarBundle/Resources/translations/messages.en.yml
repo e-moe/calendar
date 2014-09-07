@@ -1,5 +1,5 @@
 index.title: Calendar
-index.greetings: Hi man
+index.greetings: Hi %user%!
 index.intro: Check what you did in last 3 trainings
 index.table.two_week: 2 weeks ago
 index.table.one_week: week ago
