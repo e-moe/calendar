@@ -3,6 +3,7 @@
 namespace Levi9\CalendarBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Levi9\CalendarBundle\Entity\User;
 
 /**
  * Exercise
@@ -56,6 +57,12 @@ class Exercise
      */
     private $time;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Levi9\CalendarBundle\Entity\User", inversedBy="exercises")
+     * @ORM\JoinColumn(nullable=false)
+     * @var User
+     */
+    protected $user;
 
     /**
      * Get id
@@ -181,4 +188,22 @@ class Exercise
     {
         return $this->time;
     }
+
+    /**
+     * @param User $user
+     */
+    public function setUser(User $user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+
 }
