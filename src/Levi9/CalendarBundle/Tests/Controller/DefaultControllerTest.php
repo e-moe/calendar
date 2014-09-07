@@ -3,6 +3,7 @@
 namespace Levi9\CalendarBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultControllerTest extends WebTestCase
 {
@@ -10,8 +11,9 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/');
+        $client->request('GET', '/');
 
-        $this->assertTrue($crawler->filter('html:contains("Hi man")')->count() > 0);
+        $this->assertEquals(Response::HTTP_FOUND, $client->getResponse()->getStatusCode());
+
     }
 }
