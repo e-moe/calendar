@@ -1,8 +1,6 @@
 levi9_calendar_homepage:
-    path:     /{_locale}
-    defaults: { _controller: Levi9CalendarBundle:Default:index, _locale: en }
-    requirements:
-        _locale: en|ru
+    resource: "@Levi9CalendarBundle"
+    type:     annotation
 
 login:
     path: /{_locale}/login
