@@ -3,3 +3,13 @@ levi9_calendar_homepage:
     defaults: { _controller: Levi9CalendarBundle:Default:index, _locale: en }
     requirements:
         _locale: en|ru
+
+login:
+    path: /{_locale}/login
+    defaults: { _controller: Levi9CalendarBundle:Security:login, _locale: en }
+    requirements:
+        _locale: en|ru
+login_check:
+    path: /login_check
+logout:
+    path: /logout
