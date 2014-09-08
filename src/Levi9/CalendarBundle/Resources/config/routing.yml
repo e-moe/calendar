@@ -1,8 +1,8 @@
-levi9_calendar_homepage:
+levi9_calendar:
     resource: "@Levi9CalendarBundle"
     type:     annotation
     prefix:   /{_locale}/
-    defaults: { _locale: en }
+    defaults: { _locale: en } # todo make it working
     requirements: { _locale: en|ru }
 
 login:
