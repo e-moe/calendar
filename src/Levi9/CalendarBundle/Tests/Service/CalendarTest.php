@@ -9,19 +9,6 @@ class CalendarTest extends \PHPUnit_Framework_TestCase
 {
     public function testGetListData()
     {
-
-
-        //todo: about CalendarResults. This is not a Unit test, because you are testing integration of service class and CalendarResults class.
-        // there are two options, how to make this test "Unit test":
-        // Option 1: You should inject a factory into service class. (Factory is another service, that just creates new instances of CalendarResults via "new" operator)
-        // Then in the test, you will define mock of this Factory. When factory method is executed - Factory will return mock of CalendarResults
-        // And then you will assert, that "setToday" method is called on CalendarResults mock with expected arguments.
-
-        // Option 2: Use associative array instead of CalendarResults class.
-        // For this task (application) I'd rather go for array. Because this will simplify a lot - service, test, CalendarResults is not needed.
-        // And this class is used only twice - in service to set data, and in 1 template to render data
-        // Laziness in writing big Unit test here helps to make simple architecture :)
-
         $expected = array(
             'today'         => array(),
             '1_week_ago'    => array(),
