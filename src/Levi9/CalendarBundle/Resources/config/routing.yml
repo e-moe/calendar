@@ -2,8 +2,14 @@ levi9_calendar:
     resource: "@Levi9CalendarBundle"
     type:     annotation
     prefix:   /{_locale}/
-    defaults: { _locale: en } # todo make it working
     requirements: { _locale: en|ru }
+
+levi9_calendar_redirect:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /en
+        permanent: true
 
 login:
     path: /{_locale}/login
