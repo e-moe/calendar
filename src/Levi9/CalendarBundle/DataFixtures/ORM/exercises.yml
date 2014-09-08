@@ -1,6 +1,10 @@
 Levi9\CalendarBundle\Entity\User:
+    # one predefined user for testing
+    user{0}:
+        username: user
+        password: user
+        email: test@example.com
     user{1..3}:
-    # todo: Let's have at leas one user with fixed name/password, to simplify testing.
         username (unique): <username()>
         password: <word()>
         email (unique): <email()>

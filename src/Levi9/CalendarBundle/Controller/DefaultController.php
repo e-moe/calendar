@@ -10,12 +10,7 @@ class DefaultController extends Controller
 {
     /**
      * @Security("has_role('ROLE_USER')")
-     * @Route(
-     *      "/{_locale}",
-     *      name="calendar_index",
-     *      requirements={"_locale" = "en|ru"},
-     *      defaults={"_locale" = "en"}
-     *  )
+     * @Route("/", name="calendar_index")
      */
     public function indexAction()
     {

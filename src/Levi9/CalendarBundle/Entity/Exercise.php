@@ -9,7 +9,7 @@ use Levi9\CalendarBundle\Entity\User;
  * Exercise
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Levi9\CalendarBundle\Entity\ExerciseRepository")
+ * @ORM\Entity()
  */
 class Exercise
 {
