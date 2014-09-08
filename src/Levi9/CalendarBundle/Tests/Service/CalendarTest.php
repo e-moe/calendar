@@ -17,7 +17,7 @@ class CalendarTest extends \PHPUnit_Framework_TestCase
 
         $user = $this->getMock('\Levi9\CalendarBundle\Entity\User');
 
-        $date = new \DateTimeImmutable('today');
+        $date = new \DateTimeImmutable('2014-09-08');
         $oneWeekAgo = $date->sub(\DateInterval::createFromDateString('1 week'));
         $twoWeeksAgo = $date->sub(\DateInterval::createFromDateString('2 weeks'));
 
