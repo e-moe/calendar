@@ -9,15 +9,7 @@ class CalendarTest extends \PHPUnit_Framework_TestCase
 {
     public function testGetListData()
     {
-        //todo: there are two issues with this test and service - with dates and with CalendarResults.
 
-        //todo: about Dates. In current implementation test might fail in midnight and if computer is slow.
-        // This is because date, generated in test could be not the same like date generated in service class a moment ago.
-        // To make this in a right way you should pass date into service. For example - via not required argument "currentDate".
-        // If currentDate was not passed in call of getListData - service will generate date. But you will pass it from test.
-        // (You could find out another option, how to pass Date into service, for example via extra setter, if you want)
-        // Also it is not good to work with current dates from test. It's better to run test with predefined dates,
-        // for example, 15-th of May, 8-th of May and 1-th of May.
 
         //todo: about CalendarResults. This is not a Unit test, because you are testing integration of service class and CalendarResults class.
         // there are two options, how to make this test "Unit test":
@@ -30,9 +22,17 @@ class CalendarTest extends \PHPUnit_Framework_TestCase
         // And this class is used only twice - in service to set data, and in 1 template to render data
         // Laziness in writing big Unit test here helps to make simple architecture :)
 
-        $expected = new CalendarResults();
+        $expected = array(
+            'today'         => array(),
+            '1_week_ago'    => array(),
+            '2_weeks_ago'   => array(),
+        );
 
         $user = $this->getMock('\Levi9\CalendarBundle\Entity\User');
+
+        $date = new \DateTimeImmutable('today');
+        $oneWeekAgo = $date->sub(\DateInterval::createFromDateString('1 week'));
+        $twoWeeksAgo = $date->sub(\DateInterval::createFromDateString('2 weeks'));
 
         $exerciseRepository = $this->getMockBuilder('\Doctrine\ORM\EntityRepository')
             ->disableOriginalConstructor()
@@ -40,15 +40,15 @@ class CalendarTest extends \PHPUnit_Framework_TestCase
         $exerciseRepository->expects($this->exactly(3))
             ->method('findBy')
             ->withConsecutive(
-                array(array('user' => $user, 'date' => new \DateTime('today')), null, null, null),
-                array(array('user' => $user, 'date' => new \DateTime('1 week ago')),null, null, null),
-                array(array('user' => $user, 'date' => new \DateTime('2 weeks ago')), null, null, null)
+                array(array('user' => $user, 'date' => $date), null, null, null),
+                array(array('user' => $user, 'date' => $oneWeekAgo), null, null, null),
+                array(array('user' => $user, 'date' => $twoWeeksAgo), null, null, null)
             )
             ->will($this->returnValue(array()));
 
 
         $calendar = new Calendar($exerciseRepository);
-        $actual = $calendar->getListData($user);
+        $actual = $calendar->getListData($user, $date);
 
         $this->assertEquals($expected, $actual);
     }

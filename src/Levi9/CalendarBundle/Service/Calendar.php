@@ -21,7 +21,7 @@ class Calendar
      *
      * @param User $user
      * @param \DateTimeImmutable $date
-     * @return CalendarResults
+     * @return array
      */
     public function getListData(User $user, \DateTimeImmutable $date = null)
     {
@@ -32,27 +32,23 @@ class Calendar
         $oneWeekAgo = $date->sub(\DateInterval::createFromDateString('1 week'));
         $twoWeeksAgo = $date->sub(\DateInterval::createFromDateString('2 weeks'));
 
-        $calendarResults = new CalendarResults();
-
-        $calendarResults
-            ->setToday(
+        $calendarResults = array(
+            'today' =>
                 $this->repository->findBy(array(
                     'user' => $user,
                     'date' => $date,
-                ))
-            )
-            ->setOneWeekAgo(
+                )),
+            '1_week_ago' =>
                 $this->repository->findBy(array(
                     'user' => $user,
                     'date' => $oneWeekAgo,
-                ))
-            )
-            ->setTwoWeeksAgo(
+                )),
+            '2_weeks_ago' =>
                 $this->repository->findBy(array(
                     'user' => $user,
                     'date' => $twoWeeksAgo,
-                ))
-            );
+                )),
+        );
 
         return $calendarResults;
     }
