@@ -20,10 +20,17 @@ class Calendar
      * Get exercises results
      *
      * @param User $user
+     * @param \DateTimeImmutable $date
      * @return CalendarResults
      */
-    public function getListData(User $user)
+    public function getListData(User $user, \DateTimeImmutable $date = null)
     {
+        if (null === $date) {
+            $date = new \DateTimeImmutable('today');
+        }
+
+        $oneWeekAgo = $date->sub(\DateInterval::createFromDateString('1 week'));
+        $twoWeeksAgo = $date->sub(\DateInterval::createFromDateString('2 weeks'));
 
         $calendarResults = new CalendarResults();
 
@@ -31,19 +38,19 @@ class Calendar
             ->setToday(
                 $this->repository->findBy(array(
                     'user' => $user,
-                    'date' => new \DateTime('today'),
+                    'date' => $date,
                 ))
             )
             ->setOneWeekAgo(
                 $this->repository->findBy(array(
                     'user' => $user,
-                    'date' => new \DateTime('1 week ago'),
+                    'date' => $oneWeekAgo,
                 ))
             )
             ->setTwoWeeksAgo(
                 $this->repository->findBy(array(
                     'user' => $user,
-                    'date' => new \DateTime('2 weeks ago'),
+                    'date' => $twoWeeksAgo,
                 ))
             );
 
