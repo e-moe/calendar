@@ -29,8 +29,8 @@ class Calendar
             $date = new \DateTimeImmutable('today');
         }
 
-        $oneWeekAgo = $date->sub(\DateInterval::createFromDateString('1 week'));
-        $twoWeeksAgo = $date->sub(\DateInterval::createFromDateString('2 weeks'));
+        $oneWeekAgo = $date->modify('1 week ago');
+        $twoWeeksAgo = $date->modify('2 weeks ago');
 
         $calendarResults = array(
             'today' =>

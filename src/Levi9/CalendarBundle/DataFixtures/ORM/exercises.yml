@@ -11,7 +11,7 @@ Levi9\CalendarBundle\Entity\User:
 
 Levi9\CalendarBundle\Entity\Exercise:
     #exercise{1..<numberBetween(300, 400)>}:
-    exercise{75..750}:
+    exercise{200..750}:
         description: <randomElement(['Chest Press', 'Biceps Curl', 'Front Lunge', 'Pullover'])>
         weight: <numberBetween(20, 200)>
         count: <numberBetween(5, 15)>
