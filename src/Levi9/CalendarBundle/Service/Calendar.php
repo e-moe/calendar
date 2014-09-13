@@ -3,7 +3,6 @@
 namespace Levi9\CalendarBundle\Service;
 
 use Doctrine\ORM\EntityRepository;
-use Levi9\CalendarBundle\Entity\CalendarResults;
 use Levi9\CalendarBundle\Entity\User;
 
 class Calendar

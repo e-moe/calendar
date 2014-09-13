@@ -2,7 +2,6 @@
 
 namespace Levi9\CalendarBundle\Tests\Service;
 
-use Levi9\CalendarBundle\Entity\CalendarResults;
 use Levi9\CalendarBundle\Service\Calendar;
 
 class CalendarTest extends \PHPUnit_Framework_TestCase
