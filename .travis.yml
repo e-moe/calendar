@@ -6,3 +6,4 @@ install:
   - composer install
 script:
   - ./bin/phpunit -c app/
+  - ./bin/phpcs --standard=PSR2 src/
