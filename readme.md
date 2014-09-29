@@ -12,4 +12,4 @@ How to test:
 
 3. ./bin/phpcs --standard=PSR2 src/
  
-[![Build Status](https://travis-ci.org/e-moe/calendar.svg?branch=master)](https://travis-ci.org/e-moe/calendar)
+Travis CI: [![Build Status](https://travis-ci.org/e-moe/calendar.svg?branch=master)](https://travis-ci.org/e-moe/calendar)
